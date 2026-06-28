@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="350" viewBox="0 0 900 350" role="img" aria-labelledby="title desc">
+  <title id="title">Job array and dependency workflow</title>
+  <desc id="desc">Diagram showing a manifest feeding a job array, followed by a dependent postprocessing job.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c5470"/>
+    </marker>
+    <style>
+      .box { fill: #fbf9ff; stroke: #5c5470; stroke-width: 2; rx: 8; }
+      .task { fill: #ece7f6; stroke: #5c5470; stroke-width: 2; rx: 8; }
+      .text { font-family: Arial, sans-serif; font-size: 16px; fill: #2d2638; }
+      .small { font-family: Arial, sans-serif; font-size: 12px; fill: #574f63; }
+      .arrow { stroke: #5c5470; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect x="34" y="128" width="150" height="78" class="box"/>
+  <text x="109" y="160" text-anchor="middle" class="text">Manifest CSV</text>
+  <text x="109" y="182" text-anchor="middle" class="small">one row per task</text>
+  <path d="M 188 167 H 248" class="arrow"/>
+  <rect x="258" y="48" width="130" height="58" class="task"/>
+  <text x="323" y="82" text-anchor="middle" class="text">Array task 0</text>
+  <rect x="258" y="128" width="130" height="58" class="task"/>
+  <text x="323" y="162" text-anchor="middle" class="text">Array task 1</text>
+  <rect x="258" y="208" width="130" height="58" class="task"/>
+  <text x="323" y="242" text-anchor="middle" class="text">Array task 2</text>
+  <rect x="258" y="288" width="130" height="42" class="task"/>
+  <text x="323" y="314" text-anchor="middle" class="small">...</text>
+  <path d="M 392 77 C 470 77 470 167 536 167" class="arrow"/>
+  <path d="M 392 157 H 536" class="arrow"/>
+  <path d="M 392 237 C 470 237 470 167 536 167" class="arrow"/>
+  <rect x="548" y="128" width="160" height="78" class="box"/>
+  <text x="628" y="160" text-anchor="middle" class="text">afterok dependency</text>
+  <text x="628" y="182" text-anchor="middle" class="small">wait for successful array</text>
+  <path d="M 712 167 H 772" class="arrow"/>
+  <rect x="784" y="128" width="96" height="78" class="box"/>
+  <text x="832" y="160" text-anchor="middle" class="text">Report</text>
+  <text x="832" y="182" text-anchor="middle" class="small">postprocess</text>
+</svg>

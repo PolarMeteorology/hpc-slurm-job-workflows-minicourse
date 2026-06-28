@@ -1,0 +1,29 @@
+name: training-material-check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run helper scripts
+        run: |
+          python scripts/simulate_workload.py --mode cpu --seconds 1
+          python scripts/render_job.py --template slurm/basic_python_job.slurm --output rendered_basic_job.slurm --job-name ci-demo
+          python scripts/summarize_sacct.py data/sample_sacct.csv
+          python scripts/check_slurm_script.py slurm/basic_python_job.slurm
+          python scripts/check_slurm_script.py slurm/manifest_array.slurm
+          python scripts/make_array_manifest.py --output data/generated_manifest.csv --count 4 --mode cpu
+          python scripts/plan_resources.py data/resource_observations.csv
+      - name: Run tests
+        run: pytest
+      - name: Build lesson documentation
+        run: sphinx-build -b html content content/_build/html

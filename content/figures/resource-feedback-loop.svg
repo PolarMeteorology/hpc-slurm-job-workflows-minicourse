@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+  <title id="title">Resource request feedback loop</title>
+  <desc id="desc">Diagram showing how learners estimate resources, run a job, inspect accounting, and revise future requests.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#486581"/>
+    </marker>
+    <style>
+      .box { fill: #f7fbff; stroke: #486581; stroke-width: 2; rx: 10; }
+      .text { font-family: Arial, sans-serif; font-size: 17px; fill: #1f2933; }
+      .small { font-family: Arial, sans-serif; font-size: 13px; fill: #52606d; }
+      .arrow { stroke: #486581; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect x="285" y="28" width="190" height="76" class="box"/>
+  <text x="380" y="60" text-anchor="middle" class="text">Estimate</text>
+  <text x="380" y="82" text-anchor="middle" class="small">CPU, memory, time</text>
+  <rect x="500" y="172" width="190" height="76" class="box"/>
+  <text x="595" y="204" text-anchor="middle" class="text">Submit and run</text>
+  <text x="595" y="226" text-anchor="middle" class="small">batch job</text>
+  <rect x="285" y="316" width="190" height="76" class="box"/>
+  <text x="380" y="348" text-anchor="middle" class="text">Inspect evidence</text>
+  <text x="380" y="370" text-anchor="middle" class="small">logs + sacct</text>
+  <rect x="70" y="172" width="190" height="76" class="box"/>
+  <text x="165" y="204" text-anchor="middle" class="text">Revise request</text>
+  <text x="165" y="226" text-anchor="middle" class="small">smaller, larger, clearer</text>
+  <path d="M 464 93 C 535 115 588 129 598 168" class="arrow"/>
+  <path d="M 594 250 C 585 294 529 328 479 344" class="arrow"/>
+  <path d="M 281 352 C 224 337 170 294 165 252" class="arrow"/>
+  <path d="M 165 168 C 174 116 235 80 281 66" class="arrow"/>
+</svg>

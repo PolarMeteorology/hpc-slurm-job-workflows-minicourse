@@ -1,0 +1,7 @@
+task_id,mode,seconds,megabytes,files,label
+0,cpu,1,64,5,cpu-short
+1,cpu,2,64,5,cpu-medium
+2,memory,1,128,5,memory-small
+3,memory,1,256,5,memory-medium
+4,io,1,64,10,io-small
+5,io,1,64,25,io-medium

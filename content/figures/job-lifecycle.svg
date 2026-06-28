@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260" role="img" aria-labelledby="title desc">
+  <title id="title">SLURM job lifecycle</title>
+  <desc id="desc">Diagram showing a job moving from script authoring to submission, queueing, execution, logs, and accounting.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f5d62"/>
+    </marker>
+    <style>
+      .box { fill: #f8fbfb; stroke: #2f5d62; stroke-width: 2; rx: 8; }
+      .accent { fill: #e7f1ef; stroke: #2f5d62; stroke-width: 2; rx: 8; }
+      .text { font-family: Arial, sans-serif; font-size: 16px; fill: #1f2d2f; }
+      .small { font-family: Arial, sans-serif; font-size: 12px; fill: #455a5d; }
+      .arrow { stroke: #2f5d62; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect x="22" y="70" width="130" height="86" class="box"/>
+  <text x="87" y="105" text-anchor="middle" class="text">Write script</text>
+  <text x="87" y="128" text-anchor="middle" class="small">directives + commands</text>
+  <path d="M 156 113 H 210" class="arrow"/>
+  <rect x="218" y="70" width="130" height="86" class="box"/>
+  <text x="283" y="105" text-anchor="middle" class="text">Submit</text>
+  <text x="283" y="128" text-anchor="middle" class="small">sbatch job.slurm</text>
+  <path d="M 352 113 H 406" class="arrow"/>
+  <rect x="414" y="70" width="130" height="86" class="accent"/>
+  <text x="479" y="105" text-anchor="middle" class="text">Queue</text>
+  <text x="479" y="128" text-anchor="middle" class="small">priority + resources</text>
+  <path d="M 548 113 H 602" class="arrow"/>
+  <rect x="610" y="70" width="130" height="86" class="box"/>
+  <text x="675" y="105" text-anchor="middle" class="text">Run</text>
+  <text x="675" y="128" text-anchor="middle" class="small">compute node</text>
+  <path d="M 744 113 H 798" class="arrow"/>
+  <rect x="806" y="38" width="148" height="72" class="box"/>
+  <text x="880" y="69" text-anchor="middle" class="text">Logs</text>
+  <text x="880" y="91" text-anchor="middle" class="small">stdout + stderr</text>
+  <rect x="806" y="136" width="148" height="72" class="box"/>
+  <text x="880" y="167" text-anchor="middle" class="text">Accounting</text>
+  <text x="880" y="189" text-anchor="middle" class="small">state + resource use</text>
+  <path d="M 740 119 C 770 119 780 74 802 74" class="arrow"/>
+  <path d="M 740 127 C 770 127 780 172 802 172" class="arrow"/>
+</svg>

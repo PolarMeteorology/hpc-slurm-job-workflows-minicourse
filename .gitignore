@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+content/_build/
+logs/
+scratch/
+rendered_*.slurm
+data/generated_manifest.csv
+*.out
+*.err

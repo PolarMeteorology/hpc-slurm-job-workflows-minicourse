@@ -1,0 +1,8 @@
+JobID,JobName,State,Elapsed,MaxRSS,AllocCPUS
+12001,hello-slurm,COMPLETED,00:00:08,42M,1
+12002,cpu-sweep_0,COMPLETED,00:00:04,38M,1
+12003,cpu-sweep_1,COMPLETED,00:00:05,40M,1
+12004,cpu-sweep_2,TIMEOUT,00:05:00,41M,1
+12005,memory-demo,OUT_OF_MEMORY,00:00:12,2048M,1
+12006,postprocess,FAILED,00:00:02,Unknown,1
+

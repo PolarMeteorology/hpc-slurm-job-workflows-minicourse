@@ -1,0 +1,9 @@
+name: hpc-slurm-job-workflows-minicourse
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pytest
+  - sphinx
+  - myst-parser
+  - sphinx-copybutton
